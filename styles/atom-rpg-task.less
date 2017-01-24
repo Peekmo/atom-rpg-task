@@ -1,0 +1,99 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+
+/**
+ * Right zone, experience circle
+ */
+.atom-rpg-task--avatar-container {
+  position: absolute;
+  z-index: 20;
+  right: 20px;
+  top: 5px;
+
+  .atom-rpg-task--experience-pie {
+    background-color:#ecc0b7;
+    width:200px;
+    height:200px;
+    -moz-border-radius:100px;
+    -webkit-border-radius:100px;
+    border-radius:100px;
+    position:relative;
+  }
+
+  .atom-rpg-task--experience-pie--clip1 {
+    position:absolute;
+    top:0;
+    left:0;
+    width:200px;
+    height:200px;
+    clip:rect(0px, 200px, 200px, 100px);
+
+
+    .atom-rpg-task--experience-pie--slice1 {
+      position:absolute;
+      width:200px;
+      height:200px;
+      clip:rect(0px, 100px, 200px, 0px);
+      -moz-border-radius:100px;
+      -webkit-border-radius:100px;
+      border-radius:100px;
+      background-color:#f7e5e1;
+      border-color:#f7e5e1;
+      -moz-transform:rotate(0);
+      -webkit-transform:rotate(0);
+      -o-transform:rotate(0);
+      transform:rotate(0);
+    }
+  }
+
+  .atom-rpg-task--experience-pie--clip2 {
+    position:absolute;
+    top:0;
+    left:0;
+    width:200px;
+    height:200px;
+    clip:rect(0, 100px, 200px, 0px);
+
+    .atom-rpg-task--experience-pie--slice2 {
+      position:absolute;
+      width:200px;
+      height:200px;
+      clip:rect(0px, 200px, 200px, 100px);
+      -moz-border-radius:100px;
+      -webkit-border-radius:100px;
+      border-radius:100px;
+      background-color:#f7e5e1;
+      border-color:#f7e5e1;
+      -moz-transform:rotate(-200);
+      -webkit-transform:rotate(-200);
+      -o-transform:rotate(-200);
+      transform:rotate(-200);
+    }
+  }
+
+  .atom-rpg-task--experience-pie--avatar {
+    position:absolute;
+    top: 20px;
+    left: 20px;
+    border-radius: 50%;
+    height: 160px;
+    width: 160px;
+    background-color: white;
+  }
+
+  .atom-rpg-task--experience-pie--level {
+    position: absolute;
+    bottom: -5px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    line-height: 3.5;
+    right: 30px;
+    border: 1px solid black;
+    background-color: white;
+    text-align: center;
+  }
+}
