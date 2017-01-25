@@ -15,7 +15,7 @@
   opacity: 0.7;
 
   .atom-rpg-task--experience-pie {
-    background-color:#ecc0b7;
+    background-color:black;
     width:200px;
     height:200px;
     -moz-border-radius:100px;
@@ -41,8 +41,8 @@
       -moz-border-radius:100px;
       -webkit-border-radius:100px;
       border-radius:100px;
-      background-color:#f7e5e1;
-      border-color:#f7e5e1;
+      background-color:@ui-site-color-5;
+      border-color:@ui-site-color-5;
       -moz-transform:rotate(0);
       -webkit-transform:rotate(0);
       -o-transform:rotate(0);
@@ -66,8 +66,8 @@
       -moz-border-radius:100px;
       -webkit-border-radius:100px;
       border-radius:100px;
-      background-color:#f7e5e1;
-      border-color:#f7e5e1;
+      background-color:@ui-site-color-5;
+      border-color:@ui-site-color-5;
       -moz-transform:rotate(-200);
       -webkit-transform:rotate(-200);
       -o-transform:rotate(-200);
@@ -82,7 +82,7 @@
     border-radius: 50%;
     height: 160px;
     width: 160px;
-    background-color: white;
+    background-color: @base-background-color;
   }
 
   .atom-rpg-task--experience-pie--level {
@@ -93,8 +93,9 @@
     border-radius: 50%;
     line-height: 3.5;
     right: 30px;
-    border: 1px solid black;
-    background-color: white;
+    border: 1px solid @text-color;
+    color: @text-color;
+    background-color: @base-background-color;
     text-align: center;
   }
 }
@@ -102,22 +103,139 @@
 .atom-rpg-task--modal {
   height: 500px;
   overflow: auto;
-}
+  position: relative;
 
-.atom-rpg-task--modal--title {
-  text-align: center;
-}
+  .atom-rpg-task--modal--button-title {
+    position: absolute;
+    top: 0;
+    padding: 11px 15px 8px 15px;
+    border-radius: 4px 4px;
+    text-align: center;
+    font-size: 10px;
+    transition: all .2s ease-in-out;
+    border: none;
 
-.atom-rpg-task--modal--table {
-  width: 100%;
-}
+    &.modal--button-title-add {
+      color: black;
+      background-color: #79d779;
+      float: left;
+    }
 
-.atom-rpg-task--modal--table--row {
-  border: 1px solid black;
-
-  td {
-    padding: 14px;
-    line-height: 1.5;
-    font-size: 13pt;
+    &.modal--button-title-close {
+      color: white;
+      background-color: #ff3232;
+      float: right;
+      right: 0;
+    }
   }
+
+  .atom-rpg-task--modal--title {
+    text-align: center;
+    height: 30px;
+    font-size: 15px;
+    padding-top: 13px;
+  }
+
+  .atom-rpg-task--modal--row {
+    width: 100%;
+    position: relative;
+    border-radius: 10px;
+    margin-top: 40px;
+    background-color: darken(@base-background-color, 5%);
+    border: 1px solid darken(@base-background-color, 5%);
+
+    .atom-rpg-task--modal--row--action {
+      position: absolute;
+      top: -20px;
+      float: right;
+      right: 30px;
+
+      .atom-rpg-task--modal--row--action--btn {
+        background-color: @button-background-color;
+        padding: 8px 10px 5px 10px;
+        border-radius: 4px 4px;
+        margin: 2px;
+        text-align: center;
+        font-size: 12pt;
+        border: none;
+      }
+    }
+
+    .atom-rpg-task--modal--row--content {
+      padding: 20px;
+      font-size: 14px;
+
+      .atom-rpg-task--modal--row--content--metadata {
+        position: relative;
+        margin-top: 20px;
+        height: 15px;
+
+        .atom-rpg-task--modal--row--content--metadata--days-left {
+          position: absolute;
+          float: left;
+          font-size: 12px;
+          left: 0;
+        }
+
+        .atom-rpg-task--modal--row--content--metadata--complexity {
+          position: absolute;
+          float: right;
+          font-size: 12px;
+          right: 0;
+
+          &.metadata--complexity--green {
+            color: green;
+          }
+
+          &.metadata--complexity--orange {
+            color: orange;
+          }
+
+          &.metadata--complexity--red {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/** fonts **/
+@font-face {
+  font-family: 'rpg-icomoon';
+  src: url('atom://atom-rpg-task/fonts/icomoon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="atom-rpg-icon-"], [class*=" atom-rpg-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'rpg-icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.atom-rpg-icon-clock2:before {
+  content: "\e94f";
+}
+.atom-rpg-icon-bin:before {
+  content: "\e9ac";
+}
+.atom-rpg-icon-plus:before {
+  content: "\ea0a";
+}
+.atom-rpg-icon-cross:before {
+  content: "\ea0f";
+}
+.atom-rpg-icon-checkmark:before {
+  content: "\ea10";
 }
